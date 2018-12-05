@@ -53,7 +53,7 @@ withEventState(`Компонент`, {Событие:[`Обработчик(){}`
 
 пример: 
 ```
-const HandlerComponent = withEventState({on, emit, children, ...props}) => {
+const HandlerComponent = withEventState({on, emit, resetEventState, children, ...props}) => {
     on("paybutton:click", (data, next) => {
         next(data);
         alert(data)
@@ -62,7 +62,10 @@ const HandlerComponent = withEventState({on, emit, children, ...props}) => {
         <fieldset>
             {
             	props['error:nomoney'] 
-            		? "не хватает "+props['error:nomoney'].amountText
+            		? (<p>
+            			не хватает {props['error:nomoney'].amountText}
+            			<button onClick={() => resetEventState('error:nomoney')}>ok</button>
+            		</p>)
             		: null
             }
             {children}
