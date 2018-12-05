@@ -7,7 +7,7 @@ rapid event emiter and listener hoc
 Внедряет в компонент следующие функции: on, emit
 
 ### emit(`Событие`, `Сообщение`, `userInfo(optional)`)
-Посылает сообщение себе и всем компонетам выше по иерархии подписаным на `Событие`
+Посылает сообщение себе и всем компонетам выше по иерархии подписанным на `Событие`
 пример: 
 ```
 const EmiterComponent = withEvent({emit}) => (
@@ -16,14 +16,14 @@ const EmiterComponent = withEvent({emit}) => (
 ```
 
 ### on(`Событие`, `Обработчик`)
-обрабатывает сообщения типа `Событие` с помощью калбэка `Обработчик`
+обрабатывает сообщения типа `Событие` с помощью колбэка `Обработчик`
 
 `Обработчик`:
-```(`Сообщение`, `Обработчик_Верхнего_компонента_подписаного на "Событие"`) => { /* process */ }```
+```(`Сообщение`, `Обработчик Верхнего_компонента_подписаного на "Событие"`) => { /* process */ }```
 
 пример: 
 ```
-const HandlerComponent = withEvent(({depth, on, emit, children}) => {
+const HandlerComponent = withEvent(({on, emit, children}) => {
     on("paybutton:click, (data, next) => {
         next(data);
         alert(data)
@@ -43,7 +43,7 @@ const HandlerComponent = withEvent(({depth, on, emit, children}) => {
 
 пример: 
 ```
-const HandlerComponent = withEventState({depth, on, emit, children, ...props}) => {
+const HandlerComponent = withEventState({on, emit, children, ...props}) => {
     on("paybutton:click", (data, next) => {
         next(data);
         alert(data)
