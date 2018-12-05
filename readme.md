@@ -1,5 +1,11 @@
-# react-context-event
-rapid event emiter and listener hoc
+react-context-event
+=========================
+rapid event emitter and listener as hoc
+
+(https://www.npmjs.com/package/react-context-event)
+
+[![npm](https://img.shields.io/npm/dw/:package.svg)](https://www.npmjs.com/package/react-context-event)
+
 
 Хоки этой либы внедряют в компоненты возможность Эмитить сообщения вверх по иерархии компонентов.
 
@@ -10,7 +16,7 @@ rapid event emiter and listener hoc
 Посылает сообщение себе и всем компонетам выше по иерархии подписанным на `Событие`
 пример: 
 ```
-const EmiterComponent = withEvent({emit}) => (
+const EmitterComponent = withEvent({emit}) => (
 	<button onClick={() => emit("paybutton:click", {amount:500, productId:1})}>Buy product 1</button>
 ));
 ```
