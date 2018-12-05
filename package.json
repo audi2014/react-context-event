@@ -1,8 +1,8 @@
 {
   "name": "react-context-event",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "rapid event emiter and listener hoc",
-  "main": "./lib/index.js",  
+  "main": "./lib/index.js",
   "repository": "github:audi2014/react-context-event",
   "peerDependencies": {
     "react": "^16.6.3"
@@ -16,7 +16,7 @@
     "emiter",
     "listener",
     "subscription"
-  ],   
+  ],
   "license": "MIT",
   "author": {
     "name": "Artur Perepelitsa (github.com/audi2014)",
