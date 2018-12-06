@@ -30,12 +30,12 @@ const EmitterComponent = withEvent({emit}) => (
 #### on(`Event`, `Handler`)
 subscribe component to ʻEvent` using the callback `Handler`
 ```jsx
-Handler = (`Message`, `Handler_of_parent_context_with_same_Event`) => { /* process */ }
+Handler = (Message, Handler_of_parent_context_with_same_Event) => { /* process */ }
 ```
 example: 
 ```jsx
 const HandlerComponent = withEvent(({on, emit, children}) => {
-    on("paybutton:click, (data, next) => {
+    on("paybutton:click", (data, next) => {
         next(data);
         alert(data)
     });
@@ -60,7 +60,7 @@ Map subscriptions to props of WrappedComponent + all functions of HOC `withEvent
 
 ```jsx
 const StatefullSubscriptions = [
-	(`prevState`, `message`, `next`, `emit`) => { // `Handler`
+	(prevState, message, next, emit) => { // `Handler`
 		return "data from handled message which passed into the `WrappedComponent` Props by key `Event`"
 	},
 	"" // `initial_state`
