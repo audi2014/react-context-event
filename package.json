@@ -1,6 +1,6 @@
 {
   "name": "react-context-event",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "rapid event emiter and listener hoc",
   "main": "./lib/index.js",
   "repository": "github:audi2014/react-context-event",
