@@ -9,7 +9,7 @@ rapid event emitter and listener as hoc
 
 This lib contains HOC-functions witch provides into `WrappedComponent` ability to emit messages to parent components and subscribe for events from child components
 
-=========================
+#
 
 ## 1) withEvent(`WrappedComponent`)
 
@@ -48,7 +48,7 @@ const HandlerComponent = withEvent(({on, emit, children}) => {
 });
 ```
 
-=========================
+#
 
 ## 2) withEventState(`WrappedComponent`, `StatefulSubscriptions`)
 
