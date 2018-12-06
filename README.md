@@ -13,11 +13,11 @@ This lib contains HOC-functions witch provides into `WrappedComponent` ability t
 
 ## 1) withEvent(`WrappedComponent`)
 
-`WrappedComponent` - your react class-component or functional-component
+#### `WrappedComponent` - your react class-component or functional-component
 
 Implements the following functions into the component: on, emit
 
-### emit(`Event`, `Message`, `userInfo(optional)`)
+#### emit(`Event`, `Message`, `userInfo(optional)`)
 
 Sends a message to itself and all components above the hierarchy subscribed to `Event`
 example: 
@@ -27,7 +27,7 @@ const EmitterComponent = withEvent({emit}) => (
 ));
 ```
 
-### on(`Event`, `Handler`)
+#### on(`Event`, `Handler`)
 subscribe component to ʻEvent` using the callback `Handler`
 ```
 Handler = (`Message`, `Handler_of_parent_context_with_same_Event`) => { /* process */ }
@@ -54,9 +54,9 @@ const HandlerComponent = withEvent(({on, emit, children}) => {
 
 Map subscriptions to props of WrappedComponent + all functions of HOC `withEvent`
 
-### `WrappedComponent` - your react class-component or functional-component
+#### `WrappedComponent` - your react class-component or functional-component
 
-### `StatefullSubscriptions` - object with keys like `Event`, values like [`Handler(){}`, `initial_state`]
+#### `StatefullSubscriptions` - object with keys like `Event`, values like [`Handler(){}`, `initial_state`]
 
 ```
 const StatefullSubscriptions = [
@@ -69,9 +69,9 @@ const StatefullSubscriptions = [
 
 Implements the following props into the component: `resetEventState`, `...eventProps`
 
-### `resetEventState` - function which resets eventProps to their `initial_state`
+#### `resetEventState` - function which resets eventProps to their `initial_state`
 
-### `...eventProps` - data received from handled messages
+#### `...eventProps` - data received from handled messages
 
 example: 
 ```
