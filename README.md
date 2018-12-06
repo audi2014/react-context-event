@@ -21,7 +21,7 @@ Implements the following functions into the component: on, emit
 
 Sends a message to itself and all components above the hierarchy subscribed to `Event`
 example: 
-```
+```jsx
 const EmitterComponent = withEvent({emit}) => (
 	<button onClick={() => emit("paybutton:click", {amount:500, productId:1})}>Buy product 1</button>
 ));
@@ -29,11 +29,11 @@ const EmitterComponent = withEvent({emit}) => (
 
 #### on(`Event`, `Handler`)
 subscribe component to ʻEvent` using the callback `Handler`
-```
+```jsx
 Handler = (`Message`, `Handler_of_parent_context_with_same_Event`) => { /* process */ }
 ```
 example: 
-```
+```jsx
 const HandlerComponent = withEvent(({on, emit, children}) => {
     on("paybutton:click, (data, next) => {
         next(data);
@@ -58,7 +58,7 @@ Map subscriptions to props of WrappedComponent + all functions of HOC `withEvent
 
 #### `StatefullSubscriptions` - object with keys like `Event`, values like [`Handler(){}`, `initial_state`]
 
-```
+```jsx
 const StatefullSubscriptions = [
 	(`prevState`, `message`, `next`, `emit`) => { // `Handler`
 		return "data from handled message which passed into the `WrappedComponent` Props by key `Event`"
@@ -74,7 +74,7 @@ Implements the following props into the component: `resetEventState`, `...eventP
 #### `...eventProps` - data received from handled messages
 
 example: 
-```
+```jsx
 const HandlerComponent = withEventState({on, emit, resetEventState, children, ...eventProps}) => {
     on("paybutton:click", (data, next) => {
         next(data);
@@ -108,7 +108,7 @@ const HandlerComponent = withEventState({on, emit, resetEventState, children, ..
 
 ## 3) setupEventContext
 
-```
+```jsx
 setupEventContext({
     log: function (`handleOn|handleEmit` `Event`, `ComponentName`, `userInfo`) {
     },
