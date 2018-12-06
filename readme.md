@@ -4,7 +4,8 @@ rapid event emitter and listener as hoc
 
 (https://www.npmjs.com/package/react-context-event)
 
-[![npm](https://img.shields.io/npm/dw/:package.svg)](https://www.npmjs.com/package/react-context-event)
+[![npm](https://img.shields.io/npm/dw/react-context-event.svg)]
+[![npm](https://img.shields.io/npm/v/react-context-event.svg)]
 
 
 Хоки этой либы внедряют в компоненты возможность Эмитить сообщения вверх по иерархии компонентов.
