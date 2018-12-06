@@ -75,7 +75,7 @@ Implements the following props into the component: `resetEventState`, `...eventP
 
 example: 
 ```
-const HandlerComponent = withEventState({on, emit, resetEventState, children, ...props}) => {
+const HandlerComponent = withEventState({on, emit, resetEventState, children, ...eventProps}) => {
     on("paybutton:click", (data, next) => {
         next(data);
         alert(data)
@@ -83,9 +83,9 @@ const HandlerComponent = withEventState({on, emit, resetEventState, children, ..
     return (
         <fieldset>
             {
-            	props['error:nomoney'] 
+            	eventProps['error:nomoney'] 
             		? (<p>
-            			Need more gold {props['error:nomoney'].amountText}!
+            			Need more gold {eventProps['error:nomoney'].amountText}!
             			<button onClick={() => resetEventState('error:nomoney')}>ok</button>
             		</p>)
             		: null
